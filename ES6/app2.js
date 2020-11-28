@@ -35,7 +35,7 @@ var alumnos_arr = ["Fernando"];
 var alumnos_arr2 = agregar_alumno(alumnos_arr, "Maria", "Pedro", "Susana");
 
 
-console.log(alumnos_arr2);
+console.log('ES5',alumnos_arr2);
 
 //EMS6
 
@@ -53,7 +53,7 @@ var alumnos_arr = ["Fernando"];
 var alumnos_arr2 = agregar_alumno2(alumnos_arr, "Maria", "Pedro", "Susana");
 
 
-console.log(alumnos_arr2);
+console.log('ES6',alumnos_arr2);
 
 //Restricciones del parametro REST
 
@@ -145,10 +145,30 @@ let cuerpo = ["cabeza", "cuello", ...partes, "pies", "dedos"];
 console.log( cuerpo )
 
 // Aclarando el doble comportamiento de las funciones
+//En ES5 y versiones anteriores, las funciones sirven con una doble
+//propositp de ser llamadas con o sin la palabra reservada "new"
 
+//Con New: el valor de this dentro de la funcion es un nuevo
+//objeto y ese nuevo objeto es retornado
+
+//Sin New: Simplemente hacemos el llamado de la funcion y esperamos
+// el retorno de algun valor procesado que puede ser un objeto, undefided o null
+/*
+ NEW.TARGET - Meta Propiedad
+
+ una meta propiedad, es una propiedad de un no-objeto, que provee
+ información adicional relacionada con su procedencia (como el new)
+
+ Cuando el constructor de la funcion es llamada, new.target se llena
+ con el operador new
+
+ Si la funcion "Call()" es ejecutada, "new.target" no estara definida ya que
+ no se ejecuto el constructor
+
+*/
 /**/
 //Los parametros se asignan en el mismo orden en el que son definidos en la función, por consecuencia, cuando mandamos "Matamoros", es asignado al nombre y no al apellido.
 //Un parámetro opcional, puede ser cualquier cosa que se le pueda enviar a una función por parámetro.
 //Arguments es un objeto de las funciones normales, que muestra todos los parámetros enviados a la función aunque no estén definidos explícitamente.
-//Argumens es un arreglo de los parametros que enviamos a la función al momento de ejecutarla. En este caso no estamos mandando ningún argumento o parámetro.
+//Arguments es un arreglo de los parametros que enviamos a la función al momento de ejecutarla. En este caso no estamos mandando ningún argumento o parámetro.
 //En el ECMAScript 5, no existía los parámetros rest, se puede tener la funcionalidad utilizando arguments, pero no es lo mismo.

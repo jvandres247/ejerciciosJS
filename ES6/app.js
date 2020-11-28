@@ -15,14 +15,14 @@ var funciones = [];
 
 for(var i=0; i<10; i++){
     funciones.push( function() {
-        console.log(i);
+        console.log(i); 
      } );
 }
 
 funciones.forEach( function(func){
     func();
 })
-
+ 
 
 let numero = 10;
  
@@ -66,7 +66,7 @@ console.log(texto.repeat(2));
 
 const ESPACIOS = 12;
 let nombres = ["Fernando", "Melissa", "Juan"];
-let numeros = ["9191112212", "1214442312", "12444454232"];
+let numeros = ["9191112212", "1214442312", "1244445423"];
 
 for (i in nombres){
     let dif = ESPACIOS - nombres[i].length;

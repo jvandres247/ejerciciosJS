@@ -74,7 +74,7 @@ const reverseInPlace = (str) => {
   }
   return result;
 };
-const g = reverseInPlace("anita");
+const g = reverseInPlace("anita me puso a trabajar");
 console.log("La palabra reversa es: ", g);
 
 //8.-Metodo de la burbuja ascendente
@@ -138,3 +138,10 @@ const arrInsertionSort = [10, 4, 40, 32, 67, 12, 43, 31, 65, 1];
 const result = insertionSort(arrInsertionSort);
 
 console.log("El resultado con insertion sort es: ", result);
+let wordArr = ['sheep', 'sheep', 'sheep', 'peehs', 'sheep'];
+let tempArr = wordArr.slice().sort();
+if(tempArr [0] !== tempArr [1]) {
+    console.log(wordArr.indexOf(tempArr[0]));
+} else {
+    console.log(wordArr.indexOf(tempArr[tempArr.length -1]));
+}
