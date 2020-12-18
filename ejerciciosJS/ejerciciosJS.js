@@ -4,6 +4,7 @@ const multiply = (a, b) => {
   const positivo = Math.abs(b) === b;
   for (i = 0; i < Math.abs(b); i++) {
     resultado = positivo ? resultado + a : resultado - a;
+    console.log("ACA:"+ (i+1) + ' ' + resultado);
   }
   return resultado;
 };
@@ -49,7 +50,7 @@ const repeated = (str) => {
     acc[1] > el[1] ? acc : el
   );
 };
-const e = repeated("this is a repeated word test this is a a an anhoter a");
+const e = repeated("this is a repeated word test this in th this word, this word work with this");
 console.log("Lo mas repetido es: ", e);
 
 //6.-Verificar si un string es un palindromo
@@ -138,10 +139,72 @@ const arrInsertionSort = [10, 4, 40, 32, 67, 12, 43, 31, 65, 1];
 const result = insertionSort(arrInsertionSort);
 
 console.log("El resultado con insertion sort es: ", result);
-let wordArr = ['sheep', 'sheep', 'sheep', 'peehs', 'sheep'];
+let wordArr = ["sheep", "sheep", "sheep", "peehs", "sheep"];
 let tempArr = wordArr.slice().sort();
-if(tempArr [0] !== tempArr [1]) {
-    console.log(wordArr.indexOf(tempArr[0]));
+if (tempArr[0] !== tempArr[1]) {
+  console.log(wordArr.indexOf(tempArr[0]));
 } else {
-    console.log(wordArr.indexOf(tempArr[tempArr.length -1]));
+  console.log(wordArr.indexOf(tempArr[tempArr.length - 1]));
 }
+
+//
+//Reverse array
+const reverseStringArr = (str) => {
+  var words = [];
+  var result = "";
+
+  words = str.match(/\S+/g);
+  for (var i = 0; i < words.length; i++) {
+    result += words[i].split("").reverse().join("") + " ";
+  }
+
+  return result;
+};
+
+var input = [
+  "Ripplenami is awesome",
+  "Candidates pass Interview",
+  "best candidates are selected",
+];
+
+for (var j = 0; j < input.length; j++) {
+  console.log(reverseStringArr(input[j]));
+}
+
+//Reverse array with loop
+
+function reverseNumber(arr) {
+  var array1 = [];
+  for (var i = 0; i < arr.length; i++) {
+    console.log("Valor de i: ",i);
+    console.log("Tamaño de arreglo: ",arr.length);
+    console.log("i: ",i);
+    array1[i] = arr[arr.length - i - 1];
+    console.log(array1[i]);
+  }
+  return array1;
+}
+
+console.log(reverseNumber([1, 2, 3, 4, 5, 6, 7]));
+
+function binaryToDecimal(str) {
+  const input = String(str);
+  const binary = String(str)
+    .split('')
+    .filter(i => i === '1' || i === '0');
+
+  if (input.length !== binary.length) {
+    return 'Invalid input';
+  }
+
+  return binary.reduce((acc, curr, index, arr) => {
+    return acc + Number(curr) * Math.pow(2, arr.length - 1 - index);
+  }, 0);
+}
+
+console.log(binaryToDecimal(1)); // 1
+console.log(binaryToDecimal(10)); // 2
+console.log(binaryToDecimal('1001')); // 9
+console.log(binaryToDecimal(10001101000)); // 1128
+console.log(binaryToDecimal('carrot')); // invalid input
+console.log(binaryToDecimal(12)); // invalid input
